@@ -1,0 +1,83 @@
+{
+  "name": "application-name",
+  "version": "1.0.0",
+  "description": "Application description.",
+  "scripts": {
+    "start": "meteor --settings settings-development.json",
+    "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
+    "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests",
+    "chimp-test": "chimp --ddp=http://localhost:3000 --mocha --path=tests",
+    "staging": "meteor deploy staging.meteor.com --settings settings-development.json",
+    "production": "meteor deploy production.meteor.com --settings settings-production.json"
+  },
+  "devDependencies": {
+    "chimp": "^0.34.1",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-meteor": "^3.5.2",
+    "eslint-plugin-react": "^5.1.1",
+    "faker": "^3.1.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "plugins": [
+      "meteor",
+      "react"
+    ],
+    "extends": [
+      "airbnb/base",
+      "plugin:meteor/guide",
+      "plugin:react/recommended"
+    ],
+    "globals": {
+      "server": false,
+      "browser": false,
+      "expect": false
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id",
+            "_ensureIndex",
+            "_verifyEmailToken",
+            "_resetPasswordToken",
+            "_name"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "apollo-client": "^0.3.12",
+    "apollo-server": "^0.1.2",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "graphql": "^0.5.0",
+    "graphql-tools": "^0.5.0",
+    "http-proxy-middleware": "^0.15.2",
+    "jquery": "^2.2.3",
+    "jquery-validation": "^1.15.0",
+    "lodash": "^4.13.1",
+    "meteor-node-stubs": "^0.2.3",
+    "react": "^15.0.2",
+    "react-addons-pure-render-mixin": "^15.0.2",
+    "react-apollo": "^0.3.7",
+    "react-bootstrap": "^0.29.4",
+    "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "react-router-bootstrap": "^0.23.0",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
+  }
+}
